@@ -112,5 +112,54 @@ namespace CollectionsProgram
             }
             while(input != 0);
         }
+
+        public static void AddDictionary()
+        {
+            Dictionary<int, string> dictionary = new Dictionary<int, string>();
+            dictionary.Add(1, "Arjun");
+            dictionary.Add(2, "Yogesh");
+            dictionary.Add(3, "Sachin");
+            dictionary.Add(4, "Rohit");
+
+            foreach(var item in dictionary)
+            {
+                Console.WriteLine("Key : " + item.Key + " " + "Value: " + item.Value);
+            }
+
+            Console.WriteLine("\nWelcome in Dictionary Opertions");
+            int input;
+            do
+            {
+                Console.WriteLine("\n1: Check the Element is Present or not by Using key And Value");
+                Console.WriteLine("2: Count Element and Remove the Element");
+                Console.WriteLine("3: Clear All Element From Dictionary");
+                Console.WriteLine("4: Please Go back in Main Method");
+                input = int.Parse(Console.ReadLine());
+                switch (input)
+                {
+                    case 1:
+                        Console.WriteLine("Check the Element is Present or not by using Key '1': " + dictionary.ContainsKey(1));
+                        Console.WriteLine("Check the Element is Present or not by using Value 'Yogesh': " + dictionary.ContainsValue("Yogesh"));
+                        break;
+                    case 2:
+                        Console.WriteLine("Count the Element: " + dictionary.Count);
+                        Console.WriteLine("Remove the element: " + dictionary.Remove(3));
+                        Console.WriteLine("Count the Element After Remove: " + dictionary.Count);
+                        break;
+                    case 3:
+                        Console.WriteLine("Count the Element Before clear all: " + dictionary.Count);
+                        dictionary.Clear();
+                        Console.WriteLine("Count the Element After clear all: " + dictionary.Count);
+                        break;
+                    case 0:
+                        Console.WriteLine("Ok");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input:----Please Enter a Correct Input");
+                        break;
+                }
+            }
+            while(input != 0);
+        }
     }
 }

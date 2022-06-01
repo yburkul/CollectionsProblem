@@ -11,6 +11,7 @@ namespace CollectionsProgram
             {
                 Console.WriteLine("\n1: Add Element in Stack");
                 Console.WriteLine("2: Add Element in Queue");
+                Console.WriteLine("3: Add Element in Dictionary");
                 Console.WriteLine("0: Exit the Program\n");
                 input = int.Parse(Console.ReadLine());
                 switch (input)
@@ -20,6 +21,9 @@ namespace CollectionsProgram
                         break;
                     case 2:
                         Collections.AddQueue();
+                        break;
+                    case 3:
+                        Collections.AddDictionary();
                         break;
                     case 0:
                         Console.WriteLine("Exit");
