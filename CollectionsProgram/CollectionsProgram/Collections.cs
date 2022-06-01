@@ -21,7 +21,7 @@ namespace CollectionsProgram
                 Console.WriteLine(item);
             }
 
-            Console.WriteLine("Welcome in Stack Opertions");
+            Console.WriteLine("\nWelcome in Stack Opertions");
             int input;
             do
             {
@@ -57,6 +57,60 @@ namespace CollectionsProgram
                 }
             }
             while (input != 0);
+        }
+
+        public static void AddQueue()
+        {
+            Queue<string> queue = new Queue<string>();  
+            queue.Enqueue("Yogesh");
+            queue.Enqueue("Ganesh");
+            queue.Enqueue("Rohit");
+            queue.Enqueue("Arjun");
+            Console.WriteLine("The Element in Queue are: ");
+            foreach (var item in queue)
+            {
+                Console.WriteLine(item);
+            }
+;
+            Console.WriteLine("\nWelcome in Queue Opertions");
+            int input;
+            do
+            {                
+                Console.WriteLine("\n1: Displaying the beginning Element of Queue");
+                Console.WriteLine("2: Checking the Element is Present or Not");
+                Console.WriteLine("3: Remove Element from Queue");
+                Console.WriteLine("4: Clear All the Element");
+                Console.WriteLine("0: Please Go back in Main Method");
+                input = int.Parse(Console.ReadLine());
+                switch(input)
+                {
+                    case 1:
+                        Console.WriteLine("The beginning element is: " + queue.Peek());
+                        break;
+                    case 2:
+                        Console.WriteLine("Check The Element is Present Or Not: " + queue.Contains("Arjun"));
+                        Console.WriteLine("Check The Element is Present Or Not: " + queue.Contains("Sachin"));
+                        break;
+                    case 3:
+                        Console.WriteLine("Before Removing Element Count is: " + queue.Count);
+                        Console.WriteLine("Removing the Element From Queue is: " + queue.Dequeue());
+                        Console.WriteLine("After remove queue the top element is: " + queue.Peek());
+                        Console.WriteLine("After Removing Element Count is: " + queue.Count);
+                        break;
+                    case 4:
+                        Console.WriteLine("Before Clear All Element from queue the Count is: " + queue.Count);
+                        queue.Clear();
+                        Console.WriteLine("After Clear All Element from queue the Count is: " + queue.Count);
+                        break;
+                    case 0:
+                        Console.WriteLine("Ok");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input:----Please Enter a Correct Input");
+                        break;
+                }
+            }
+            while(input != 0);
         }
     }
 }
