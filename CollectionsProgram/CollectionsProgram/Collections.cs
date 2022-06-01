@@ -120,8 +120,8 @@ namespace CollectionsProgram
             dictionary.Add(2, "Yogesh");
             dictionary.Add(3, "Sachin");
             dictionary.Add(4, "Rohit");
-
-            foreach(var item in dictionary)
+            Console.WriteLine("The Element in Dictionary are: ");
+            foreach (var item in dictionary)
             {
                 Console.WriteLine("Key : " + item.Key + " " + "Value: " + item.Value);
             }
@@ -133,7 +133,7 @@ namespace CollectionsProgram
                 Console.WriteLine("\n1: Check the Element is Present or not by Using key And Value");
                 Console.WriteLine("2: Count Element and Remove the Element");
                 Console.WriteLine("3: Clear All Element From Dictionary");
-                Console.WriteLine("4: Please Go back in Main Method");
+                Console.WriteLine("0: Please Go back in Main Method");
                 input = int.Parse(Console.ReadLine());
                 switch (input)
                 {
@@ -160,6 +160,59 @@ namespace CollectionsProgram
                 }
             }
             while(input != 0);
+        }
+
+        public static void AddList()
+        {
+            List<int> list = new List<int>();
+            list.Add(10);
+            list.Add(20);
+            list.Add(30);
+            list.Add(40);
+            Console.WriteLine("The Element in List are: ");
+            foreach (int item in list)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("\nWelcome in List Opertions");
+            int input;
+            do
+            {
+                Console.WriteLine("\n1: Check the Element is Present or not");
+                Console.WriteLine("2: Count Element");
+                Console.WriteLine("3: Remove Element From List");
+                Console.WriteLine("4: Clear All Element From List");
+                Console.WriteLine("0: Please Go back in Main Method");
+                input = int.Parse(Console.ReadLine());
+                switch (input)
+                {
+                    case 1:
+                        Console.WriteLine("Check The Element is Present or not '20': " + list.Contains(20));
+                        break;
+                    case 2:
+                        Console.WriteLine("The List Element are: " + list.Count);
+                        break;
+                    case 3:
+                        Console.WriteLine("Remove the Element '10': " + list.Remove(10));
+                        Console.WriteLine("After Remove Element count is: " + list.Count);
+                        break;
+                    case 4:
+                        Console.WriteLine("Before Clear All List the Element Present in list: " + list.Count);
+                        list.Clear();
+                        Console.WriteLine("After Clear All List the Element Present in list: " + list.Count);
+                        break;
+                    case 0:
+                        Console.WriteLine("Ok");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input:----Please Enter a Correct Input");
+                        break;
+                }
+            }
+            while (input != 0); 
+
+
         }
     }
 }
